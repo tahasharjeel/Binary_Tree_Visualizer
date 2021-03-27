@@ -58,30 +58,36 @@ function sleep(ms) {
 }
 
 async function intrav() {
+  document.getElementById("intrav").innerHTML = "Inorder: ";
   inorder(root);
   for (let i = 0; i < inorderArray.length; i++) {
     inorderArray[i].highlight("yellow");
     document.getElementById("intrav").innerHTML += " " + inorderArray[i].value;
     await sleep(1000);
   }
+  inorderArray = [];
 }
 
 async function pretrav() {
+  document.getElementById("pretrav").innerHTML = "Preorder: ";
   preorder(root);
   for (let i = 0; i < preorderArray.length; i++) {
     preorderArray[i].highlight("yellow");
     document.getElementById("pretrav").innerHTML += " " + preorderArray[i].value;
     await sleep(1000);
   }
+  preorderArray = [];
 }
 
 async function posttrav() {
+  document.getElementById("posttrav").innerHTML = "Postorder: ";
   postorder(root);
   for (let i = 0; i < postorderArray.length; i++) {
     postorderArray[i].highlight("yellow");
     document.getElementById("posttrav").innerHTML += " " + postorderArray[i].value;
     await sleep(1000);
   }
+  postorderArray = [];
 }
 
 function inorder(current) {
